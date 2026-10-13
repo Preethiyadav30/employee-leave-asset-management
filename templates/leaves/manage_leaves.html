@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Manage Leaves</title>
+</head>
+
+<body>
+
+    <h1>Manage Employee Leaves</h1>
+
+    {% if leaves %}
+
+        <table border="1" cellpadding="10">
+
+            <tr>
+                <th>Employee</th>
+                <th>Leave Type</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Reason</th>
+                <th>Status</th>
+                <th>Applied On</th>
+                <th>Action</th>
+            </tr>
+
+            {% for leave in leaves %}
+
+            <tr>
+
+                <td>
+                    {{ leave.employee.username }}
+                </td>
+
+                <td>
+                    {{ leave.get_leave_type_display }}
+                </td>
+
+                <td>
+                    {{ leave.start_date }}
+                </td>
+
+                <td>
+                    {{ leave.end_date }}
+                </td>
+
+                <td>
+                    {{ leave.reason }}
+                </td>
+
+                <td>
+                    {{ leave.status }}
+                </td>
+
+                <td>
+                    {{ leave.applied_on }}
+                </td>
+
+                <td>
+
+                    {% if leave.status == "Pending" %}
+
+                        <a href="{% url 'approve_leave' leave.id %}">
+                            Approve
+                        </a>
+
+                        |
+
+                        <a href="{% url 'reject_leave' leave.id %}">
+                            Reject
+                        </a>
+
+                    {% else %}
+
+                        -
+
+                    {% endif %}
+
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+        </table>
+
+    {% else %}
+
+        <p>No leave requests found.</p>
+
+    {% endif %}
+
+</body>
+
+</html>

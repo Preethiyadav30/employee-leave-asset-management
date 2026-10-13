@@ -1,0 +1,23 @@
+# Python files
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Private environment variables
+.env
+.env.*
+
+# Local database
+db.sqlite3
+db.sqlite3-journal
+
+# User-uploaded media
+media/
+
+# IDE and operating system files
+.vscode/
+.DS_Store
