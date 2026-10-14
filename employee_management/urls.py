@@ -26,6 +26,7 @@ urlpatterns = [
     path("leaves/", include("leaves.urls")),
 
     path("assets/", include("assets.urls")),
+    path("dashboard/", include("dashboard.urls")),
 
 ]
 
