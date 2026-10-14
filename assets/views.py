@@ -30,6 +30,6 @@ def request_asset(request):
 
     return render(
         request,
-        "assets/request_asset.html",
+        "assests/request_asset.html",
         {"form": form}
     )
