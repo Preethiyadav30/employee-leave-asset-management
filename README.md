@@ -148,9 +148,4 @@ Through this project, I gained practical experience with:
 - Improved dashboard with reports and statistics
 - Deployment to a live hosting platform
 
-## Author
-
-**Preethi Yadav**
-
-Python | Django | HTML | SQL
 
